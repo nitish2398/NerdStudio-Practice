@@ -7,15 +7,15 @@ Given startPointer, the head of a linked list, determine if the linked list has 
 */
 
 public class DetectCycleInLinkedList {
-    public static boolean detectCycleInLinkedList(Node startPointer) {
+    public static boolean detectCycleInLinkedList(ListNode startPointer) {
 
         // If startPointer is null, then no cycle Exist
-        if(startPointer == null) {
+        if (startPointer == null) {
             return false;
         }
 
-        Node slowPointer = startPointer;
-        Node fastPointer = startPointer;
+        ListNode slowPointer = startPointer;
+        ListNode fastPointer = startPointer;
 
         while (fastPointer != null) {
 
@@ -23,7 +23,7 @@ public class DetectCycleInLinkedList {
             If the next of fastPointer is null, that means it is end of linked list.
             So, cycle does not exist
              */
-            if(fastPointer.next == null) {
+            if (fastPointer.next == null) {
                 return false;
             }
             fastPointer = fastPointer.next.next;
@@ -33,7 +33,7 @@ public class DetectCycleInLinkedList {
             If fastPointer has captured the slow pointer
             then, cycle does exist
              */
-            if(slowPointer.equals(fastPointer)) {
+            if (slowPointer.equals(fastPointer)) {
                 return true;
             }
         }

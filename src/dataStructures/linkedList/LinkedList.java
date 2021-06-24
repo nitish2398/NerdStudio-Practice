@@ -1,14 +1,14 @@
 package dataStructures.linkedList;
 
 public class LinkedList {
-    public static Node getLinkedList(int [] arr) {
-        Node start = null;
-        Node prevNode = null;
+    public static ListNode getLinkedList(int[] arr) {
+        ListNode start = null;
+        ListNode prevNode = null;
 
-        for(int data: arr) {
-            Node newNode = new Node(data);
+        for (int data : arr) {
+            ListNode newNode = new ListNode(data);
 
-            if(start == null) {
+            if (start == null) {
                 start = newNode;
                 prevNode = newNode;
             } else {
@@ -20,9 +20,9 @@ public class LinkedList {
         return start;
     }
 
-    public static void printList(Node start) {
+    public static void printList(ListNode start) {
         while (start != null) {
-            System.out.print(start.data + " ");
+            System.out.print(start.val + " ");
             start = start.next;
         }
         System.out.println();

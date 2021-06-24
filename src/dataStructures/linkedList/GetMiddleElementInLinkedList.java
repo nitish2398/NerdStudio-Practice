@@ -8,15 +8,15 @@ If there are two middle nodes, return the second middle node.
  */
 
 public class GetMiddleElementInLinkedList {
-    public static Node getMiddleElementInLinkedList(Node head) {
+    public static ListNode getMiddleElementInLinkedList(ListNode head) {
 
         // If head is null, then return head
-        if(head == null) {
+        if (head == null) {
             return head;
         }
 
-        Node slowPointer = head;
-        Node fastPointer = head;
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
 
         while (fastPointer != null) {
 
@@ -24,7 +24,7 @@ public class GetMiddleElementInLinkedList {
             if the next of fastPointer is null,
             that means slowPointer has reached in the middle of odd elements LinkedList
              */
-            if(fastPointer.next == null) {
+            if (fastPointer.next == null) {
                 return slowPointer;
             }
 
