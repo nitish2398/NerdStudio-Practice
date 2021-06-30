@@ -8,32 +8,30 @@ If there are two middle nodes, return the second middle node.
  */
 
 public class GetMiddleElementInLinkedList {
-    public static Node getMiddleElementInLinkedList(Node head) {
+    public static ListNode getMiddleElementInLinkedList(ListNode head) {
 
         // If head is null, then return head
-        if(head == null) {
+        if (head == null) {
             return head;
         }
 
-        Node slowPointer = head;
-        Node fastPointer = head;
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
 
-        while (fastPointer != null) {
+        while (fastPointer != null && fastPointer.next != null) {
+            /*
+            move fast pointer by two steps
+             */
+            fastPointer = fastPointer.next.next;
 
             /*
-            if the next of fastPointer is null,
-            that means slowPointer has reached in the middle of odd elements LinkedList
+            move slow pointer by one step
              */
-            if(fastPointer.next == null) {
-                return slowPointer;
-            }
-
-            fastPointer = fastPointer.next.next;
             slowPointer = slowPointer.next;
         }
 
         /*
-        return the slowPointer as middle for even elements LinkedList
+        return the slowPointer as middle element of LinkedList
          */
         return slowPointer;
     }
